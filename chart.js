@@ -450,14 +450,13 @@
 
     function Z(t) {
         var e = +t;
-        if (!isNaN(e)) {
-            if (e >= 1e8) return "".concat(Math.trunc(e / 1e8 * 1000) / 1000, "亿");
-            if (e >= 1e4) return "".concat(Math.trunc(e / 1e4 * 1000) / 1000, "万");
-            return "".concat(e);
+        if (O(e)) {
+            if (e > 1e9) return "".concat(+(e / 1e9).toFixed(3), "B");
+            if (e > 1e6) return "".concat(+(e / 1e6).toFixed(3), "M");
+            if (e > 1e3) return "".concat(+(e / 1e3).toFixed(3), "K")
         }
-        return "".concat(t);
+        return "".concat(t)
     }
-    
 
     function U(t, e) {
         var i = "".concat(t);
@@ -6032,8 +6031,8 @@
                         "{high}": q(U(K(y.high, x), a), s),
                         "{low}": q(U(K(y.low, x), a), s),
                         "{close}": q(U(K(y.close, x), a), s),
-                        "{volume}": q(U(r.formatBigNumber(K(null !== (h = y.volume) && void 0 !== h ? h : v.defaultValue, S)), a), s),
-                        "{turnover}": q(U(K(null !== (p = y.turnover) && void 0 !== p ? p : v.defaultValue, x), a), s),
+                        "{volume}": q(U(K(null !== (h = y.volume) && void 0 !== h ? h : v.defaultValue, S), a), s),
+                        "{turnover}": q(U(r.formatBigNumber(K(null !== (p = y.turnover) && void 0 !== p ? p : v.defaultValue, x), a)), s),
                         "{change}": 0 === m ? v.defaultValue : "".concat(U(K(_ / m * 100), a), "%")
                     };
                 return (null !== (g = R(v.custom) ? v.custom(e, l) : v.custom) && void 0 !== g ? g : []).map((function(t) {
