@@ -6032,7 +6032,7 @@
                         "{low}": q(U(K(y.low, x), a), s),
                         "{close}": q(U(K(y.close, x), a), s),
                         "{volume}": q(U(K(null !== (h = y.volume) && void 0 !== h ? h : v.defaultValue, S), a), s),
-                        "{turnover}": q(U(r.formatBigNumber(K(null !== (p = y.turnover) && void 0 !== p ? p : v.defaultValue, x), a)), s),
+                        "{turnover}": q(U(r.formatBigNumber(K(null !== (p = y.turnover) && void 0 !== p ? p : v.defaultValue, x)), a), s),
                         "{change}": 0 === m ? v.defaultValue : "".concat(U(K(_ / m * 100), a), "%")
                     };
                 return (null !== (g = R(v.custom) ? v.custom(e, l) : v.custom) && void 0 !== g ? g : []).map((function(t) {
