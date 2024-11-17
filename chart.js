@@ -450,13 +450,14 @@
 
     function Z(t) {
         var e = +t;
-        if (O(e)) {
-            if (e > 1e9) return "".concat(+(e / 1e9).toFixed(3), "B");
-            if (e > 1e6) return "".concat(+(e / 1e6).toFixed(3), "M");
-            if (e > 1e3) return "".concat(+(e / 1e3).toFixed(3), "K")
+        if (!isNaN(e)) {
+            if (e >= 1e8) return "".concat((e / 1e8).toFixed(3), "亿");
+            if (e >= 1e4) return "".concat((e / 1e4).toFixed(3), "万");
+            return "".concat(e);
         }
-        return "".concat(t)
+        return "".concat(t);
     }
+    
 
     function U(t, e) {
         var i = "".concat(t);
