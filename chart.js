@@ -451,8 +451,8 @@
     function Z(t) {
         var e = +t;
         if (!isNaN(e)) {
-            if (e >= 1e8) return "".concat((e / 1e8).toFixed(3), "亿");
-            if (e >= 1e4) return "".concat((e / 1e4).toFixed(3), "万");
+            if (e >= 1e8) return "".concat(Math.trunc(e / 1e8 * 1000) / 1000, "亿");
+            if (e >= 1e4) return "".concat(Math.trunc(e / 1e4 * 1000) / 1000, "万");
             return "".concat(e);
         }
         return "".concat(t);
