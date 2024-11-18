@@ -448,6 +448,16 @@
         return O(i) ? i.toFixed(null != e ? e : 2) : "".concat(t)
     }
 
+    function K2(t) {
+        var i = +t;
+        if (!isNaN(i)) {
+            var factor = Math.pow(10, 2);
+            var truncated = Math.trunc(i * factor) / factor;
+            return truncated.toFixed(2);
+        }
+        return "".concat(t);
+    }
+
     function Z(t) {
         var e = +t;
         if (O(e)) {
@@ -6031,7 +6041,7 @@
                         "{high}": q(U(K(y.high, x), a), s),
                         "{low}": q(U(K(y.low, x), a), s),
                         "{close}": q(U(K(y.close, x), a), s),
-                        "{volume}": q(U(y.volume, a), s),
+                        "{volume}": q(U(K2(y.volume), a), s),
                         "{turnover}": q(U(r.formatBigNumber(K(null !== (p = y.turnover) && void 0 !== p ? p : v.defaultValue, x)), a), s),
                         "{change}": 0 === m ? v.defaultValue : "".concat(U(K(_ / m * 100), a), "%")
                     };
