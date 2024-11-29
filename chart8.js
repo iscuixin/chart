@@ -1746,14 +1746,14 @@
                         type: "line"
                     }
                 }));
-                return e.push(Wt()), e
+                e.push(Wt());
+                console.log(JSON.stringify(e));
+                return e;
             },
             calc: function(t, e) {
                 var i = e.calcParams,
                     n = e.figures,
                     o = [];
-                    console.log(JSON.stringify(t));
-                    console.log(JSON.stringify(e));
                 return t.map((function(e, r) {
                     var a, s = null !== (a = e.volume) && void 0 !== a ? a : 0,
                         l = {
