@@ -1752,8 +1752,8 @@
                 var i = e.calcParams,
                     n = e.figures,
                     o = [];
-                    console.log(t);
-                    console.log(e);
+                    console.log(JSON.stringify(t));
+                    console.log(JSON.stringify(e));
                 return t.map((function(e, r) {
                     var a, s = null !== (a = e.volume) && void 0 !== a ? a : 0,
                         l = {
