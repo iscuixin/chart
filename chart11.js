@@ -1740,14 +1740,13 @@
             }, Wt()],
             regenerateFigures: function(t) {
                 var e = [Wt()];
-                e.push(t.map((function(t, e) {
+                return e.concat(t.map((function(t, e) {
                     return {
                         key: "ma".concat(e + 1),
                         title: "MA".concat(t, ": "),
                         type: "line"
                     }
                 })));
-                return e;
             },
             calc: function(t, e) {
                 var i = e.calcParams,
