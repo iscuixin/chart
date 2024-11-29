@@ -1708,7 +1708,9 @@
             title: "VOLUME: ",
             type: "bar",
             baseValue: 0,
-            styles: {color: '#8e8e8e'}
+            styles: function(t, e, i) {
+                return {color: '#8e8e8e'};
+            }
         }
     }
     var zt = {
