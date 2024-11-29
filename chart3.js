@@ -1705,7 +1705,7 @@
     function Wt() {
         return {
             key: "volume",
-            title: "VOL: ",
+            title: "VOLUME: ",
             type: "bar",
             baseValue: 0,
             styles: function(t, e, i) {
@@ -1746,12 +1746,14 @@
                         type: "line"
                     }
                 }));
-                return e.unshift([Wt()]), e;
+                return e.push(Wt()), e
             },
             calc: function(t, e) {
                 var i = e.calcParams,
                     n = e.figures,
                     o = [];
+                    console.log(t);
+                    console.log(e);
                 return t.map((function(e, r) {
                     var a, s = null !== (a = e.volume) && void 0 !== a ? a : 0,
                         l = {
