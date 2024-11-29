@@ -1739,15 +1739,14 @@
                 type: "line"
             }, Wt()],
             regenerateFigures: function(t) {
-                var e = t.map((function(t, e) {
+                var e = [Wt()];
+                e.push(t.map((function(t, e) {
                     return {
                         key: "ma".concat(e + 1),
                         title: "MA".concat(t, ": "),
                         type: "line"
                     }
-                }));
-                e.push(Wt());
-                console.log(JSON.stringify(e));
+                })));
                 return e;
             },
             calc: function(t, e) {
