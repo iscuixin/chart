@@ -1708,13 +1708,7 @@
             title: "VOLUME: ",
             type: "bar",
             baseValue: 0,
-            styles: function(t, e, i) {
-                var n = t.current.kLineData,
-                    o = G(e.styles, "bars[0].noChangeColor", i.bars[0].noChangeColor);
-                return V(n) && (n.close > n.open ? o = G(e.styles, "bars[0].upColor", i.bars[0].upColor) : n.close < n.open && (o = G(e.styles, "bars[0].downColor", i.bars[0].downColor))), {
-                    color: o
-                }
-            }
+            styles: {color: '#8e8e8e'}
         }
     }
     var zt = {
@@ -1739,16 +1733,14 @@
                 type: "line"
             }, Wt()],
             regenerateFigures: function(t) {
-                var e = [Wt()];
-                var s = e.concat(t.map((function(t, e) {
+                var e = t.map((function(t, e) {
                     return {
                         key: "ma".concat(e + 1),
                         title: "MA".concat(t, ": "),
                         type: "line"
                     }
-                })));
-                console.log(JSON.stringify(s));
-                return s;
+                }));
+                return e.push(Wt()), e
             },
             calc: function(t, e) {
                 var i = e.calcParams,
